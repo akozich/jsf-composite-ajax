@@ -55,6 +55,7 @@
              so that generated project uses correct version of richfaces.
          -->
         <org.richfaces.bom.version>4.3.5.Final</org.richfaces.bom.version>
+        <org.myfaces.version>2.1.12</org.myfaces.version>
     </properties>
 
     <build>
@@ -164,14 +165,14 @@
                 <dependency>
                     <groupId>org.apache.myfaces.core</groupId>
                     <artifactId>myfaces-api</artifactId>
-                    <version>2.1.12</version>
+                    <version>${org.myfaces.version}</version>
                     <scope>compile</scope>
                 </dependency>
  
                 <dependency>
                     <groupId>org.apache.myfaces.core</groupId>
                     <artifactId>myfaces-impl</artifactId>
-                    <version>2.1.12</version>
+                    <version>${org.myfaces.version}</version>
                     <scope>compile</scope>
                 </dependency>
             </dependencies>
