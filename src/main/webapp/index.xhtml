@@ -1,20 +1,21 @@
 <ui:composition xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:t="http://java.sun.com/jsf/composite/tag"
                 template="/templates/template.xhtml">
 
     <ui:define name="title">RichFaces Sample</ui:define>
 
     <ui:define name="body">
         <h:form prependId="false">
-            <h:outputLabel value="Name:" for="nameInput" />
-            <h:inputText id="nameInput" value="#{richBean.name}">
+            <t:superInput value="#{richBean.name}">
                 <a4j:ajax event="keyup" render="output" />
-            </h:inputText>
+            </t:superInput>
             <h:panelGroup id="output">
                 <h:outputText value="Hello #{richBean.name}!"
                               rendered="#{not empty richBean.name}" />
             </h:panelGroup>
+            <h:commandButton value="Submit"/>
         </h:form>
     </ui:define>
 </ui:composition>

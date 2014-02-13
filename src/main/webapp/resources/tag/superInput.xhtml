@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface>
+        <composite:attribute name="value" required="false"/>
+        <composite:clientBehavior name="keyup" 
+                                  event="keyup"
+                                  targets="nameInput"/>
+    </composite:interface>
+
+    <composite:implementation>
+        <h:outputLabel value="Name:" for="nameInput"/>
+        <h:inputText id="nameInput" value="#{cc.attrs.value}">
+            <composite:insertChildren/>
+        </h:inputText>
+    </composite:implementation>
+</html>
